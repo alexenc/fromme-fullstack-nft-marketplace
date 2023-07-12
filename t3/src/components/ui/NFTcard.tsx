@@ -1,3 +1,4 @@
+/** eslint-disable */
 import { AiFillHeart } from "react-icons/ai";
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -7,7 +8,7 @@ import shortenAddress from "../../utils/shortenAddress";
 
 const NFTcard = ({ item }: { item: ExploreItem }) => {
   const [tokenId, setTokenId] = useState<number>();
-  const [tokenUri, setTokenUri] = useState<string>();
+  const [tokenUri, setTokenUri] = useState<string>("");
   const [tokenName, setTokenName] = useState<string>();
   const [tokenDescription, setTokenDescription] = useState<string>();
 
@@ -44,7 +45,7 @@ const NFTcard = ({ item }: { item: ExploreItem }) => {
     return formattedTokenUri;
   }
 
-  const formattedTokenUri = `https://ipfs.io/ipfs/${tokenUri!.substring(
+  const formattedTokenUri = `https://ipfs.io/ipfs/${tokenUri.substring(
     7,
     200
   )}`;
